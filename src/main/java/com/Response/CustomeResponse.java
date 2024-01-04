@@ -16,6 +16,13 @@ public class CustomeResponse {
 		return new ResponseEntity<Object>(map,status);
 	}
 	
+	public static ResponseEntity<Object> login(String message,String accessToken, Object object){
+		Map<String , Object> map = new HashMap<>();
+		map.put("message", message);
+		map.put("accessToken", accessToken);
+		map.put("Data", object);
+		return ResponseEntity.ok(map);
+	}
 	public static ResponseEntity<Object> alreadyExist(String message,HttpStatus status, boolean result){
 		Map<String , Object> map = new HashMap<>();
 		map.put("message ", message);
